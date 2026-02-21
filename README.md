@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# 🎂 Birthday Celebration Site - Sweety's 18th
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, highly interactive, and cinematic birthday celebration web application built with a modern tech stack. This project features high-end animations, a responsive memory gallery, and a custom interactive cake-cutting experience.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **🎬 Next-Level Cake Animation**: A custom interactive SVG cake-cutting sequence featuring cinematic knife movement, screen flash, camera shake, and physics-based particle explosions.
+- **📸 Responsive Memory Gallery**: A wide-grid gallery for laptops that seamlessly transitions to a vertical stack for mobile, ensuring all memories are perfectly visible with zero clipping.
+- **👧 Childhood Portrait**: A specialized section featuring a portrait-oriented (9:16) childhood photo with decorative elements.
+- **📜 Narrative Sections**: Multiple scroll-triggered sections including "Our Story", "Intro", and "Closing" that create a cohesive storytelling experience.
+- **🚀 Smooth GSAP Animations**: Leverages GSAP ScrollTrigger and ScrollToPlugin for fluid, scroll-driven interactions and a smooth user interface.
+- **📱 Fully Responsive**: Meticulously tuned for all devices—from small mobile screens to wide laptops—using Tailwind CSS and dynamic scaling logic.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React](https://reactjs.org/) with [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animation**: [GSAP](https://greensock.com/gsap/) (ScrollTrigger, ScrollToPlugin)
+- **Design**: Minecraft-inspired blocks, pixel-art aesthetics, and premium CSS micro-animations.
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v18 or higher)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   git clone https://github.com/NotYourBr0/Birthday-Template-App.git
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Navigate to the project directory:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   cd Birthday-Template-App
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+## 📂 Project Structure
+
+- `src/sections/`: Individual celebration sections (Cake, Gallery, Story, etc.)
+- `src/components/ui/`: Reusable UI components powered by Shadcn
+- `src/index.css`: Global styles and custom keyframe animations
+
+## ❤️ Credits
+
+Built with love for Sweety's 18th birthday.
