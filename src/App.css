@@ -1,0 +1,231 @@
+/* App-specific styles */
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 106, 151, 0.3) transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 106, 151, 0.3);
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 106, 151, 0.5);
+}
+
+/* Section z-index stacking */
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+.z-60 { z-index: 60; }
+.z-70 { z-index: 70; }
+.z-80 { z-index: 80; }
+
+/* Ensure pinned sections stack correctly */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Photo frame hover effect */
+.photo-frame {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 18px 0 rgba(0, 0, 0, 0.12),
+    0 0 30px rgba(255, 106, 151, 0.4);
+}
+
+/* Minecraft block hover */
+.mc-block,
+.mc-block-float {
+  transition: transform 0.2s ease;
+}
+
+.mc-block:hover,
+.mc-block-float:hover {
+  transform: translateY(-2px);
+}
+
+/* Button press effect */
+.btn-coral:active {
+  transform: translateY(4px) scale(0.98);
+}
+
+/* Candle flame glow */
+.flame {
+  box-shadow: 
+    0 0 10px #FFD36E,
+    0 0 20px #FF8A8A,
+    0 0 30px #FFD36E;
+}
+
+/* Confetti colors */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* Firework animation enhancement */
+.firework-burst {
+  transform-origin: center;
+}
+
+/* Heart float animation variations */
+@keyframes heart-float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+    opacity: 0.7;
+  }
+}
+
+/* Typing cursor blink */
+.typing-cursor::after {
+  content: '|';
+  color: #FF6A97;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Cloud drift animation */
+@keyframes cloud-drift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+/* Bounce animation for CTA */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .section-pinned,
+  .section-flowing {
+    min-height: 100vh;
+  }
+  
+  .photo-frame {
+    border-width: 4px;
+  }
+  
+  .mc-block,
+  .mc-block-float {
+    border-width: 4px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .btn-coral {
+    padding: 12px 24px;
+    font-size: 12px;
+    border-width: 3px;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Touch device optimizations */
+@media (pointer: coarse) {
+  .photo-frame:hover {
+    transform: none;
+  }
+  
+  .mc-block:hover,
+  .mc-block-float:hover {
+    transform: none;
+  }
+}
